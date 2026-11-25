@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Product Explorer</h1>
+    <p>Browse products from an external API and save your favorites.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input type="search" id="search-input" placeholder="Search products by name...">
+      <select id="category-select">
+        <option value="all">All categories</option>
+      </select>
+      <label class="fav-toggle">
+        <input type="checkbox" id="favorites-only">
+        Favorites only (<span id="fav-count">0</span>)
+      </label>
+    </section>
+
+    <p id="result-count" class="result-count"></p>
+
+    <div id="loading" class="state hidden">Loading products...</div>
+    <div id="error" class="state error hidden">
+      <p id="error-message"></p>
+      <button id="retry-btn">Retry</button>
+    </div>
+    <div id="empty" class="state hidden">No products found.</div>
+
+    <section id="product-grid" class="grid"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
